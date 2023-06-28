@@ -71,8 +71,3 @@ pnpm install
 npm run docs:dev
 
 ```
-## 微信交流群
-
-|                  微信二维码                   |
-| :--------------------------------------: |
-| <img src="./public/weixin.jpg" width=170> |

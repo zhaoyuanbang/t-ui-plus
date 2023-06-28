@@ -46,7 +46,7 @@ const defaultActiveKey = computed({
   },
 })
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .t_detail {
   .el-collapse {
     border: none;

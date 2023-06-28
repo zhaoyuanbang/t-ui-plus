@@ -1,0 +1,53 @@
+.el-overlay {
+  .el-dialog {
+    border-radius: 4px;
+    .el-dialog__header {
+      margin-right: 0;
+      border-bottom: 1px solid var(--el-border-color-base);
+      padding: 12px var(--el-form-margin-base);
+      .el-dialog__headerbtn {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+      }
+    }
+    .el-dialog__body {
+      padding: var(--el-form-margin-base);
+    }
+    .el-dialog__footer {
+      padding: 0 var(--el-form-margin-base) var(--el-form-margin-base);
+    }
+  }
+}
+
+// 暗黑色主题
+.dark {
+  .el-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    .el-dialog {
+      background-color: var(--maia-dark-sub-background-color);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      
+      .el-dialog__header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+
+
+// 操作气泡
+.el-popover__title {
+  font-size: 16px;
+}
+.el-popover {
+  --el-popover-title-font-size: var(--el-font-size-base);
+}
+.el-popper.el-popover {
+  color: var(--el-text-color-primary);
+  padding: 6px 12px;
+}

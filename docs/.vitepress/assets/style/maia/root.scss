@@ -1,0 +1,28 @@
+// element-plus 变量重置
+:root {
+  // 复写：element-plus 样式
+  --el-font-size-base: 12px;
+  --el-border-radius-base: 2px;
+  --el-menu-base-level-padding: 12px;
+  --el-input-height: 28px;
+  --el-component-size: 28px;
+  --el-font-weight-base: 400;
+  --el-font-weight-large: 600;
+  --el-form-margin-base: 16px;
+
+
+  // 自定义样式
+  --maia-color-white: #ffffff;
+  --maia-color-sub-white: rgba(255, 255, 255, 0.8);
+  --maia-dark-sub-background-color: #21252D;
+  --maia-form-item-base-height: 28px;
+  
+  --maia-menu-text-color: #434C59;
+  --maia-menu-active-text-color: #007AF5;
+  --maia-menu-text-color-sub: var(--maia-color-sub-white);
+  --maia-menu-horizontal-text-color-sub: var(--maia-color-white);
+
+
+  // 菜单被选中时高亮
+  --menu-item-active-color: var(--el-color-primary);
+}

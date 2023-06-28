@@ -2,11 +2,11 @@ import DefaultTheme from 'vitepress/theme'
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import 'element-plus/theme-chalk/dark/css-vars.css'
+import '../assets/style/maia/index.scss';
+// import 'element-plus/theme-chalk/dark/css-vars.css'
 import locale from 'element-plus/lib/locale/lang/zh-cn'
 // 图标并进行全局注册
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-
 import { VPDemo } from '../vitepress'
 // 基于element-plus二次封装基础组件
 import TuiPlus from '../../../packages'
@@ -26,7 +26,7 @@ export default {
     }
     // 全局注册基础组件
     ctx.app.use(TuiPlus)
-    
+
     ctx.app.component('Demo', VPDemo)
   },
 }

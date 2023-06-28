@@ -1,0 +1,10 @@
+// 面包屑
+.el-breadcrumb {
+  font-size: var(--el-font-size-base);
+  .el-breadcrumb__separator {
+    font-weight: var(--el-font-weight-base);
+  }
+}
+.el-breadcrumb .el-icon {
+  vertical-align: middle;
+}

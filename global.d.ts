@@ -9,6 +9,8 @@ declare module '@avue/runtime-core' {
     TSelectTable: typeof import('@wocwin/t-ui-plus/lib/packages')['TSelectTable']
     TDetail: typeof import('@wocwin/t-ui-plus/lib/packages')['TDetail']
     TButton: typeof import('@wocwin/t-ui-plus/lib/packages')['TButton']
+    TSidebar: typeof import('@wocwin/t-ui-plus/lib/packages')['TSidebar']
+    TSvgIcon: typeof import('@wocwin/t-ui-plus/lib/packages')['TSvgIcon']
     TStepWizard: typeof import('@wocwin/t-ui-plus/lib/packages')['TStepWizard']
     TTimerBtn: typeof import('@wocwin/t-ui-plus/lib/packages')['TTimerBtn']
     TModuleForm: typeof import('@wocwin/t-ui-plus/lib/packages')['TModuleForm']

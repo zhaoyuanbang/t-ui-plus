@@ -247,7 +247,7 @@ defineExpose({
   setSelectedTab,
 })
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .t_module_form {
   position: relative;
   display: flex;

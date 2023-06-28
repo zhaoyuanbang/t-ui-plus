@@ -71,7 +71,7 @@ const handleEvent = (val, type) => {
   emits('handleEvent', val, type)
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .t_form {
   .el-collapse {
     border: none;

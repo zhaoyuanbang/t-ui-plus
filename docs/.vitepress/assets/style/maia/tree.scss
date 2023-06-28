@@ -1,0 +1,10 @@
+.el-tree {
+  .el-checkbox__inner {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+  }
+  .el-checkbox .el-checkbox__input.is-indeterminate .el-checkbox__inner::before {
+    top: 6px;
+  }
+}

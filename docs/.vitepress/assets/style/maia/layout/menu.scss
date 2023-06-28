@@ -1,0 +1,198 @@
+@mixin background--active {
+  background: linear-gradient(90deg, #E6EFFF 0%, #EDF3FF 9.64%, #F2F7FF 83.33%);
+}
+@mixin vertical-common--active {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #007AF5;
+  box-shadow: 6px 0px 8px rgba(85, 135, 240, 0.25);
+}
+@mixin horizontal-common--active {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 16px;
+  width: calc(100% - 32px);
+  height: 2px;
+  background-color: #007AF5;
+  box-shadow: 0px 1px 3px rgba(20, 116, 243, 0.3);
+}
+
+.el-menu {
+  --el-menu-bg-color: transparent;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  // 竖向菜单
+  &.el-menu--vertical {
+    .el-sub-menu {
+      .el-menu-item {
+        color: var(--maia-menu-text-color);
+        height: 36px;
+        line-height: 36px;
+        padding: 0 16px 0 38px !important;
+        min-width: 54px;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 25px;
+          height: 100%;
+          width: 1px;
+          background-color: #EAEDF6;
+        }
+      }
+    }
+    
+    .el-menu-item,
+    .el-sub-menu__title {
+      color: var(--maia-menu-text-color);
+      height: 42px;
+      line-height: 42px;
+      padding: 0 16px !important; // 菜单padding被js修改，所以需要强覆盖
+      > div {
+        // 折叠菜单时内部样式被js修改成 padding: 0 20px; 需要进行强覆盖
+        padding: 0 16px !important;
+      }
+    }
+  
+    .el-menu-item:hover,
+    .el-sub-menu__title:hover {
+      @include background--active();
+    }
+  
+    .el-menu-item {
+      &.is-active {
+        color: var(--maia-menu-active-text-color);
+        font-weight: var(--el-font-weight-large);
+        @include background--active();
+        &::after {
+          @include vertical-common--active();
+        }
+      }
+    }
+  
+    .el-sub-menu {
+      .el-menu-item {
+        &.is-active {
+          color: var(--maia-menu-active-text-color);
+          font-weight: var(--el-font-weight-large);
+          @include background--active();
+          &::after {
+            @include vertical-common--active();
+            left: 24px;
+            height: 24px;
+            top: 6px;
+          }
+        }
+      }
+  
+      &:not(.is-opened) {
+        &.is-active {
+          .el-sub-menu__title {
+            color: var(--maia-menu-active-text-color);
+            font-weight: var(--el-font-weight-large);
+            @include background--active();
+            &:before {
+              @include vertical-common--active();
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.el-menu--collapse {
+    .el-sub-menu {
+      &.is-active {
+        .el-sub-menu__title {
+          @include background--active();
+          &:before {
+            @include vertical-common--active();
+          }
+        }
+      }
+    }
+  }
+
+  // 横向菜单
+  &.el-menu--horizontal {
+    .el-sub-menu {
+      .el-menu-item {
+        color: var(--maia-menu-text-color);
+        height: 36px;
+        line-height: 36px;
+        padding: 0 16px 0 38px !important;
+        min-width: 54px;
+      }
+    }
+
+    .el-menu-item,
+    .el-sub-menu__title {
+      color: var(--maia-menu-text-color);
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .el-menu-item:hover,
+    .el-sub-menu__title:hover {
+      --el-menu-hover-bg-color: transparent;
+    }
+    .el-menu-item:not(.is-disabled):focus,
+    .el-sub-menu__title:not(.is-disabled):focus {
+      --el-menu-hover-bg-color: transparent;
+    }
+
+    .el-menu-item {
+      &.is-active {
+        color: var(--maia-menu-active-text-color);
+        font-weight: var(--el-font-weight-large);
+        &:before {
+          @include horizontal-common--active();
+        }
+      }
+    }
+
+    .el-sub-menu {
+      .el-sub-menu__title {
+        padding-right: 32px !important;
+        .el-sub-menu__icon-arrow {
+          right: 16px;
+        }
+      }
+      &:not(.is-opened) {
+        &.is-active {
+          color: var(--maia-menu-active-text-color);
+          font-weight: var(--el-font-weight-large);
+          .el-sub-menu__title {
+            color: var(--maia-menu-active-text-color);
+            &::before {
+              @include horizontal-common--active();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 菜单组件，折叠起来时popup弹出框样式控制
+.el-menu--popup {
+  border: 1px solid #EAEDF6;
+  background-color: #FFFFFF;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  box-shadow: 0px 3px 10px rgba(191, 191, 191, 0.14);
+  border-radius: 2px;
+  .el-menu-item,
+  .el-sub-menu__title {
+    height: 30px;
+    color: #111111 !important;
+    &.is-active {
+      color: #007AF5 !important;
+    }
+  }
+}

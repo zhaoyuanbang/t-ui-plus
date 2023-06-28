@@ -1,0 +1,132 @@
+@mixin sub-background--active {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.13) 100%);
+}
+@mixin sub-vertical-common--active {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 1px 0px 5px rgba(85, 135, 240, 0.25);
+}
+
+.el-aside {
+  --el-aside-width: 180px;
+  .el-aside.collapse,
+  .el-menu--collapse {
+    width: 54px;
+  }  
+
+  &.aside__maia-default {
+    color: var(--maia-menu-text-color);
+    background: radial-gradient(155.32% 100% at 0% 0%, #F7FAFD 0%, #FBFCFE 25.86%, #FFFFFF 100%);
+
+    // 左侧导航中的系统名称
+    .maia-system-title {
+      color: #000000;
+      font-weight: var(--el-font-weight-large);
+      min-width: 100px;
+    }
+  }
+
+  &.aside__maia-blue {
+    background: radial-gradient(102.22% 24.02% at 100% 0%, rgba(36, 145, 255, 0.2) 0%, rgba(0, 122, 245, 0) 100%), radial-gradient(107.5% 39.69% at 50% 100%, #3F91F7 0%, rgba(0, 127, 255, 0) 100%), radial-gradient(62.73% 62.73% at 107.5% 37.27%, #2478E4 0%, #007AF5 100%),
+  }
+  &.aside__maia-cerulean {
+    background: radial-gradient(100% 31.53% at 100% 0%, #3A5EC9 0%, rgba(50, 85, 189, 0) 100%), radial-gradient(107.5% 39.69% at 50% 100%, #4664BF 0%, rgba(65, 97, 193, 0) 100%), radial-gradient(86.39% 69.26% at 136.39% 30.74%, #3A58B7 0%, #3154BC 100%),
+  }
+  &.aside__maia-indigo {
+    background: radial-gradient(88.33% 20.76% at 96.39% 1.31%, #2B4D7C 0%, rgba(44, 58, 96, 0) 100%), radial-gradient(107.5% 39.69% at 50% 100%, #2B4D7C 0%, rgba(44, 58, 96, 0) 100%), radial-gradient(322.5% 75.78% at 119.17% 24.22%, #2B4D7C 0%, #2C3A60 100%),
+  }
+  &.aside__maia-orange {
+    background: radial-gradient(120.28% 28.26% at 100% 1.63%, #FA7D01 0%, rgba(247, 102, 0, 0) 100%), radial-gradient(107.5% 39.69% at 50% 100%, #FA7D01 0%, rgba(247, 102, 0, 0) 100%), radial-gradient(65% 70.89% at 115% 29.11%, #F27B2C 0%, #F76600 100%),
+  }
+  &.aside__maia-blue,
+  &.aside__maia-cerulean,
+  &.aside__maia-indigo,
+  &.aside__maia-orange {
+    color: var(--maia-menu-text-color-sub);
+    // 竖向菜单
+    .el-menu--vertical {
+      .el-sub-menu {
+        .el-menu-item {
+          color: var(--maia-menu-text-color-sub);
+          &:before {
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+      .el-menu-item,
+      .el-sub-menu__title {
+        color: var(--maia-menu-text-color-sub);
+      }
+      .el-menu-item:hover,
+      .el-sub-menu__title:hover {
+        @include sub-background--active();
+      }
+      .el-menu-item {
+        &.is-active {
+          color: var(--maia-color-white);
+          font-weight: var(--el-font-weight-large);
+          @include sub-background--active();
+          &::after {
+            @include sub-vertical-common--active();
+          }
+        }
+      }
+
+      .el-sub-menu {
+        .el-menu-item {
+          &.is-active {
+            color: var(--maia-color-white);
+            font-weight: var(--el-font-weight-large);
+            @include sub-background--active();
+            &::after {
+              @include sub-vertical-common--active();
+              left: 24px;
+              height: 24px;
+              top: 6px;
+            }
+          }
+        }
+
+        &:not(.is-opened) {
+          &.is-active {
+            .el-sub-menu__title {
+              color: var(--maia-color-white);
+              font-weight: var(--el-font-weight-large);
+              @include sub-background--active();
+              &:before {
+                @include sub-vertical-common--active();
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 解决竖向菜单collapse时，选中菜单父节点没有高亮问题
+    .el-menu--collapse {
+      .el-sub-menu {
+        &.is-active {
+          .el-sub-menu__title {
+            opacity: 0.5;
+            @include sub-background--active();
+            &:before {
+              @include sub-vertical-common--active();
+            }
+          }
+        }
+      }
+    }
+
+    // 左侧导航中的系统名称
+    .maia-system-title {
+      color: #FFFFFF;
+      font-weight: var(--el-font-weight-large);
+      min-width: 100px;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+@mixin sub-horizontal-common--active {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 16px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+.el-header {
+  --maia-text-color-light-black: #434C59;
+  
+  &.header__maia-default {
+    background: #F4F7FC;
+    color: var(--maia-text-color-light-black);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.03), inset 0px -1px 0px #EAEDF6;
+
+    // 左侧导航中的系统名称
+    .maia-system-title {
+      color: #000000;
+      font-weight: var(--el-font-weight-large);
+      min-width: 100px;
+    }
+    // 顶部导航中的面包屑
+    .el-breadcrumb {
+      .el-breadcrumb__item {
+        .el-breadcrumb__inner {
+          color: var(--maia-text-color-light-black);
+          a {
+            color: var(--maia-text-color-light-black);
+          }
+        }
+        .el-breadcrumb__separator {
+          color: var(--maia-text-color-light-black);
+        }
+      }
+    }
+    // 右侧dropDown
+    .el-dropdown {
+      .username {
+        color: var(--maia-text-color-light-black);
+      }
+    }
+  }
+
+  &.header__maia-blue {
+    background: linear-gradient(90.08deg, #0F76F5 0%, #3F91F7 100%);
+  }
+  &.header__maia-cerulean {
+    background: linear-gradient(90.08deg, #4369EB 0%, #3D67D2 100%);
+  }
+  &.header__maia-indigo {
+    background: linear-gradient(90.08deg, #33476F 0%, #395A84 100%);
+  }
+  &.header__maia-orange {
+    background: linear-gradient(90.27deg, #F76600 0%, #FA7D00 100%);
+  }
+
+  &.header__maia-blue,
+  &.header__maia-cerulean,
+  &.header__maia-indigo,
+  &.header__maia-orange {
+    color: var(--maia-color-white);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    
+    // 左侧导航中的系统名称
+    .maia-system-title {
+      color: #FFFFFF;
+      font-weight: var(--el-font-weight-large);
+      min-width: 100px;
+    }
+
+    // 横向菜单
+    .el-menu--horizontal {
+      .el-sub-menu {
+        .el-menu-item {
+          color: var(--maia-menu-horizontal-text-color-sub);
+        }
+      }
+      .el-menu-item,
+      .el-sub-menu__title {
+        color: var(--maia-menu-horizontal-text-color-sub);
+      }
+      .el-menu-item {
+        &.is-active {
+          color: var(--maia-color-white);
+          font-weight: var(--el-font-weight-large);
+          &:before {
+            @include sub-horizontal-common--active();
+          }
+        }
+      }
+      .el-sub-menu {
+        &:not(.is-opened) {
+          &.is-active {
+            color: var(--maia-color-white);
+            font-weight: var(--el-font-weight-large);
+            .el-sub-menu__title {
+              color: var(--maia-color-white);
+              &::before {
+                @include sub-horizontal-common--active();
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 顶部导航中的面包屑
+    .el-breadcrumb {
+      .el-breadcrumb__item {
+        .el-breadcrumb__inner {
+          color: var(--maia-color-white);
+          a {
+            color: var(--maia-color-white);
+          }
+        }
+        .el-breadcrumb__separator {
+          color: var(--maia-color-white);
+        }
+      }
+    }
+
+    // 当前登录账号信息
+    .el-dropdown {
+      .username {
+        color: var(--maia-color-white);
+      }
+    }
+  }
+}

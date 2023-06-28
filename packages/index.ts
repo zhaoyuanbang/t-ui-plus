@@ -13,6 +13,8 @@ import TTimerBtn from './timer-btn'
 import TModuleForm from './module-form'
 import TAdaptivePage from './adaptive-page'
 import TDatePicker from './date-picker'
+import TSidebar from './sider-bar'
+import TSvgIcon from './svg-icon'
 
 // 存储组件列表
 const components: {
@@ -32,6 +34,8 @@ const components: {
   TModuleForm,
   TAdaptivePage,
   TDatePicker,
+  TSidebar,
+  TSvgIcon,
 }
 // 插件声明：声明所有插件
 // 插件注册：在 Vue 项目的入口文件中，通过 ( app.use(插件) ) 进行注册
@@ -67,6 +71,8 @@ export {
   TModuleForm,
   TAdaptivePage,
   TDatePicker,
+  TSidebar,
+  TSvgIcon,
 }
 export default {
   ...components,

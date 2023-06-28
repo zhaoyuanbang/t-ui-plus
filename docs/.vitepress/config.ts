@@ -23,20 +23,6 @@ export default defineConfig({
         text: 'GitHub地址',
         link: 'https://github.com/wocwin/t-ui-plus',
       },
-      {
-        text: 'Gitee码云地址',
-        link: 'https://gitee.com/wocwin/t-ui-plus',
-      },
-      {
-        text: '博客',
-        items: [
-          { text: 'CSDN', link: 'https://blog.csdn.net/cwin8951' },
-          {
-            text: '掘金',
-            link: 'https://juejin.cn/user/888061128344087/posts',
-          },
-        ],
-      },
     ],
     sidebar: {
       '/components': [
@@ -64,6 +50,7 @@ export default defineConfig({
             { text: '表单组件', link: '/components/TForm/base.md' },
             { text: '模块表单组件', link: '/components/TModuleForm/base.md' },
             { text: 'table组件', link: '/components/TTable/base.md' },
+            { text: 'sidebar组件', link: '/components/TSidebar/base.md' },
           ],
         },
       ],

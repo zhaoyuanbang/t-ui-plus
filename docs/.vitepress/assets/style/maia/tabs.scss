@@ -1,0 +1,10 @@
+// Tab
+.el-tabs__item {
+  font-weight: var(--el-font-weight-base);
+  height: 30px;
+  line-height: 30px;
+
+  &.is-active {
+    font-weight: var(--el-font-weight-large);
+  }
+}
